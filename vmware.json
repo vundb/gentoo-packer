@@ -20,6 +20,12 @@
         "{{user `password`}}",
         "<enter>",
         "<wait>",
+        "sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config",
+        "<enter>",
+        "<wait>",
+        "echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config",
+        "<enter>",
+        "<wait>",
         "/etc/init.d/sshd start",
         "<enter>",
         "<wait>"
@@ -28,7 +34,7 @@
       "disk_size": 60000,
       "guest_os_type": "linux",
       "headless": true,
-      "iso_checksum": "20dc09c811940c8742a9d1c7fa6da7cf8eaecf6c24797c67a00ba3d36e80d66f3d2555c6dbe9be303c0304cbdf51eaaca2deda8f523872912f58119663b4ffc5",
+      "iso_checksum": "77056442a5af47d4d361ff0259daafaf898d3fb9a4d19802333190e614d69da5866ab06993590b129c60a35783e82f6d19b913790dcc42871e29c6af4869b507",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
       "shutdown_command": "shutdown -hP now",
@@ -69,7 +75,7 @@
   ],
   "variables": {
     "password": "packer",
-    "stage3": "20141002",
+    "stage3": "20160929",
     "username": "root"
   }
 }
