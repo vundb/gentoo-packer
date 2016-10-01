@@ -14,19 +14,21 @@ fi
 chmod +x $SCRIPTS/scripts/*.sh
 
 for script in \
-  partition   \
-  stage3      \
-  mounts      \
-  resolv.conf \
-  portage     \
-  timezone    \
-  fstab       \
-  kernel      \
-  grub        \
-  $VM_TYPE    \
-  network     \
-  vagrant     \
-  cleanup
+  01-partition   \
+  02-stage3      \
+  03-mounts      \
+  04-resolv.conf \
+  05-portage     \
+  06-timezone    \
+  07-fstab       \
+  08-kernel      \
+  09-grub        \
+  10-$VM_TYPE    \
+  11-network     \
+  12-vagrant     \
+  13-locale      \
+	14-keymap      \
+  15-cleanup
 do
   "$SCRIPTS/scripts/$script.sh"
 done
