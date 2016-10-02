@@ -32,7 +32,7 @@
       ],
       "boot_wait": "5s",
       "disk_size": 60000,
-      "guest_os_type": "linux",
+      "guest_os_type": "other3xlinux-64",
       "headless": true,
       "iso_checksum": "77056442a5af47d4d361ff0259daafaf898d3fb9a4d19802333190e614d69da5866ab06993590b129c60a35783e82f6d19b913790dcc42871e29c6af4869b507",
       "iso_checksum_type": "sha512",
