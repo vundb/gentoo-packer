@@ -44,7 +44,8 @@
       "type": "vmware-iso",
       "vm_name": "Gentoo",
       "vmx_data": {
-        "memsize": "1024"
+        "memsize": "1024",
+				"numvcpus": "2"
       }
     }
   ],
