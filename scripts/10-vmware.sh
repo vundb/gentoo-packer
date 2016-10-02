@@ -1,3 +1,13 @@
 #!/bin/bash
 
-# TODO: Install open-vm-tools
+chroot /mnt/gentoo /bin/bash <<'EOF'
+emerge "=virtual/linux-sources-1"
+
+emerge ">=app-emulation/open-vm-tools-10.0.7" --autounmask-write
+etc-update --automode -5
+emerge ">=app-emulation/open-vm-tools-10.0.7"
+
+mkdir /mnt/hgfs
+
+rc-update add vmware-tools default
+EOF
