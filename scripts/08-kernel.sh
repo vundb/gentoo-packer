@@ -9,5 +9,4 @@ mv /tmp/kernel.config .config
 make
 make modules_install
 make install
-emerge -C sys-kernel/gentoo-sources
 EOF
