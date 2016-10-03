@@ -1,11 +1,11 @@
 #!/bin/bash
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
-emerge "=virtual/linux-sources-1"
+emerge -vq "=virtual/linux-sources-1"
 
-emerge ">=app-emulation/open-vm-tools-10.0.7" --autounmask-write
+emerge -vq ">=app-emulation/open-vm-tools-10.0.7" --autounmask-write
 etc-update --automode -5
-emerge ">=app-emulation/open-vm-tools-10.0.7"
+emerge -vq ">=app-emulation/open-vm-tools-10.0.7"
 
 mkdir /mnt/hgfs
 

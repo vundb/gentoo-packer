@@ -1,8 +1,8 @@
 #!/bin/bash
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
-	emerge app-portage/gentoolkit
-	emerge app-misc/screen
-  emerge app-editors/vim
-	emerge net-dns/bind-tools
+	emerge -vq app-portage/gentoolkit
+	emerge -vq app-misc/screen
+  emerge -vq app-editors/vim
+	emerge -vq net-dns/bind-tools
 EOF
