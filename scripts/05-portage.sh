@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo 'Sync portage'
 chroot /mnt/gentoo /bin/bash <<'EOF'
 mkdir /usr/portage
 emerge-webrsync -v -q
