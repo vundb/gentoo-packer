@@ -28,7 +28,8 @@ for script in \
   12-vagrant     \
   13-locale      \
 	14-keymap      \
-  15-cleanup
+  15-tools       \
+	16-cleanup
 do
   "$SCRIPTS/scripts/$script.sh"
 done
