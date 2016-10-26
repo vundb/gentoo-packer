@@ -12,6 +12,10 @@ rm -rf /mnt/gentoo/var/log/*
 rm -rf /mnt/gentoo/var/tmp/*
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
+echo "masters = gentoo" >> /usr/portage/metadata/layout.conf
+EOF
+
+chroot /mnt/gentoo /bin/bash <<'EOF'
 wget http://intgat.tigress.co.uk/rmy/uml/zerofree-1.0.3.tgz
 tar xvzf zerofree-*.tgz
 cd zerofree*/
