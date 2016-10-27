@@ -12,6 +12,7 @@ rm -rf /mnt/gentoo/var/log/*
 rm -rf /mnt/gentoo/var/tmp/*
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
+mkdir /usr/portage/metadata/
 echo "masters = gentoo" >> /usr/portage/metadata/layout.conf
 EOF
 
