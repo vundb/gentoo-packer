@@ -23,4 +23,5 @@ cat << FILE > /etc/portage/package.keywords/docker-compose
 =dev-python/dockerpty-0.4.1 ~amd64
 FILE
 emerge -vq app-emulation/docker-compose
+emerge net-misc/dhcpcd
 EOF
