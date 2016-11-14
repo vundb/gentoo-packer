@@ -5,7 +5,7 @@ tarball=stage3-amd64-$STAGE3.tar.bz2
 mount /dev/sda4 /mnt/gentoo
 
 echo 'Testing stage3 mirrors'
-MIRROR=`mirrorselect -b10 -D -s1 -o -H -t60 -c 'USA' | grep 'GENTOO_MIRRORS='`
+MIRROR=`mirrorselect -b10 -D -s1 -o -H -t60 -R 'Europe' | grep 'GENTOO_MIRRORS='`
 
 cd /mnt/gentoo
 echo 'Download stage3'
