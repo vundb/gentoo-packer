@@ -30,6 +30,12 @@ or
 
 ## Usage
 
+If you want to run the latest stage3, run the perl script
+
+    perl latest_state3.pl
+
+This should update the .json file with the latest file + MD5Sum.
+
 This is a [Packer](https://packer.io/) template. Install the latest version of
 Packer, then:
 
