@@ -2,8 +2,8 @@
 
 cp $SCRIPTS/scripts/kernel.config /mnt/gentoo/tmp/
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
-emerge -vq sys-kernel/gentoo-sources
+chroot /mnt/gentoo /bin/bash -x <<'EOF'
+emerge --quiet sys-kernel/gentoo-sources
 cd /usr/src/linux
 mv /tmp/kernel.config .config
 echo 'make'

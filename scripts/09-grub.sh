@@ -1,8 +1,12 @@
 #!/bin/bash
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
-emerge -vq sys-boot/grub
+chroot /mnt/gentoo /bin/bash -x <<'EOF'
+emerge --quiet sys-boot/grub
 grub-install /dev/sda
-echo "GRUB_TIMEOUT=0.1" >> /etc/default/grub
+EOF
+
+sed -i 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=1/' /mnt/gentoo/etc/default/grub
+
+chroot /mnt/gentoo /bin/bash -x <<'EOF'
 grub-mkconfig -o /boot/grub/grub.cfg
 EOF

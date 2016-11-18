@@ -11,6 +11,8 @@ cd /mnt/gentoo
 echo 'Download stage3'
 curl -sLO --progress-bar --retry 4 --retry-delay 1 ${MIRROR:16:-1}releases/amd64/autobuilds/$STAGE3/$tarball
 echo 'Untar stage3'
-tar xjpf $tarball
+tar xjpf $tarball --xattrs
 echo 'Remove tarball'
 rm $tarball
+echo 'Add mirror information to portage'
+echo "GENTOO_MIRRORS=\"${MIRROR:16:-2}\"" >> /mnt/gentoo/etc/portage/make.conf

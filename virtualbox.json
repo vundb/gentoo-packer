@@ -31,10 +31,10 @@
         "<wait>"
       ],
       "boot_wait": "5s",
-      "disk_size": 60000,
+      "disk_size": 20000,
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
-      "headless": false,
+      "headless": true,
       "iso_checksum": "d52bbe8b30ef6569b59429dac007bb4b157f34d3ee3dc7c42927a555170d50814617ed52ccbf8b9fc2b355948bf2e87c2188685084d2c02bce228577949e8d56",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
@@ -43,6 +43,26 @@
       "ssh_username": "{{user `username`}}",
       "ssh_wait_timeout": "20s",
       "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "1024"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vram",
+          "16"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "2"
+        ]
+      ],
       "vm_name": "Gentoo"
     }
   ],
