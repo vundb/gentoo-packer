@@ -34,7 +34,7 @@
       "disk_size": 60000,
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
-      "headless": false,
+      "headless": "{{user `headless`}}",
       "iso_checksum": "86563ddde411f352035aa2ce219a070a8e3821e749c011da73a737dd3e9dcef2181e51b79b5e22497adbe39a356c5dbcb77ec0e03e81bb303b112c3e59efead1",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
@@ -76,6 +76,7 @@
     "password": "packer",
     "stage3": "20170907",
     "username": "root",
-    "country": "USA"
+    "country": "USA",
+    "headless": "false"
   }
 }
