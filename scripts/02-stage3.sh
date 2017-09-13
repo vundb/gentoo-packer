@@ -2,15 +2,17 @@
 
 tarball=stage3-amd64-$STAGE3.tar.bz2
 
-mount /dev/sda4 /mnt/gentoo
+mkdir -p /mnt/gentoo
+mount -o rw /dev/sda4 /mnt/gentoo
+
+COUNTRY="${COUNTRY:-USA}"
 
 echo 'Testing stage3 mirrors'
-MIRROR=`mirrorselect -b10 -D -s1 -o -H -t60 -R 'Europe' | grep 'GENTOO_MIRRORS='`
+MIRROR=$(grep '^GENTOO_MIRRORS' '/etc/portage/make.conf')
+[ -z $MIRROR ] && MIRROR=`mirrorselect -b10 -s1 -o -H -t60 -c $COUNTRY | grep 'GENTOO_MIRRORS='`
+MIRROR=$(echo $MIRROR | sed -e 's/"//g')
 
 cd /mnt/gentoo
 echo 'Download stage3'
-curl -sLO --progress-bar --retry 4 --retry-delay 1 ${MIRROR:16:-1}releases/amd64/autobuilds/$STAGE3/$tarball
-echo 'Untar stage3'
-tar xjpf $tarball
-echo 'Remove tarball'
-rm $tarball
+curl -sL --progress-bar --retry 4 --retry-delay 1 "${MIRROR##GENTOO_MIRRORS=}/releases/amd64/autobuilds/${STAGE3}/${tarball}" | tar xpj
+ls -l

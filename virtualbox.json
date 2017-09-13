@@ -35,7 +35,7 @@
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
       "headless": false,
-      "iso_checksum": "d52bbe8b30ef6569b59429dac007bb4b157f34d3ee3dc7c42927a555170d50814617ed52ccbf8b9fc2b355948bf2e87c2188685084d2c02bce228577949e8d56",
+      "iso_checksum": "86563ddde411f352035aa2ce219a070a8e3821e749c011da73a737dd3e9dcef2181e51b79b5e22497adbe39a356c5dbcb77ec0e03e81bb303b112c3e59efead1",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
       "shutdown_command": "shutdown -hP now",
@@ -63,7 +63,8 @@
       "environment_vars": [
         "STAGE3={{user `stage3`}}",
         "VM_TYPE=virtualbox",
-        "SCRIPTS=/tmp"
+        "SCRIPTS=/tmp",
+        "COUNTRY={{user `country`}}"
       ],
       "scripts": [
         "provision.sh"
@@ -73,7 +74,8 @@
   ],
   "variables": {
     "password": "packer",
-    "stage3": "20161103",
-    "username": "root"
+    "stage3": "20170907",
+    "username": "root",
+    "country": "USA"
   }
 }
