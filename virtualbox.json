@@ -52,7 +52,7 @@
   "description": "Faithful Stage 3 Gentoo Installation (VirtualBox)",
   "post-processors": [
     {
-      "output": "gentoo-amd64-stage3-virtualbox.box",
+      "output": "codylane-gentoo-{{user `stage3`}}.box",
       "type": "vagrant"
     }
   ],
