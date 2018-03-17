@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/bash -uex
 
 LANG="${LANG:-en_US}"
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 cat > /etc/env.d/02locale <<'LOC'
 LANG="${LANG}.UTF-8"
 LC_COLLATE=C

@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/bash -uex
 
 ARCH="${ARCH:-amd64}"
 tarball=stage3-amd64-$STAGE3.tar.bz2
-[ $ARCH == "x86" ] && tarball=stage3-i686-$STAGE3.tar.bz2
+[ $ARCH == "x86" ] && tarball=stage3-i686-$STAGE3.tar.bz2 || true
 
 mkdir -p /mnt/gentoo
 mount -o rw /dev/sda4 /mnt/gentoo

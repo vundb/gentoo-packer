@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -uex
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 cd /usr/src/linux && make clean
 emerge -vq --depclean
 EOF
@@ -10,12 +10,12 @@ rm -rf /mnt/gentoo/tmp/*
 rm -rf /mnt/gentoo/var/log/*
 rm -rf /mnt/gentoo/var/tmp/*
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 mkdir /usr/portage/metadata/
 echo "masters = gentoo" >> /usr/portage/metadata/layout.conf
 EOF
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 wget http://frippery.org/uml/zerofree-1.0.4.tgz
 tar xvzf zerofree-*.tgz
 cd zerofree*/
@@ -29,5 +29,5 @@ mount -o remount,ro /mnt/gentoo
 ./zerofree /dev/sda4
 
 swapoff /dev/sda3
-dd if=/dev/zero of=/dev/sda3
+dd if=/dev/zero of=/dev/sda3 || true
 mkswap /dev/sda3

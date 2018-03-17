@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -uex
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 emerge -vq "=virtual/linux-sources-1"
 
 emerge -vq  ">=app-emulation/virtualbox-guest-additions-5.1" --autounmask-write

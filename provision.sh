@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/bash -uex
 
+STAGE3=${STAGE3:-}
 if [ -z $STAGE3 ]; then
   echo "STAGE3 environment variable must be set to a timestamp."
   exit 1
 fi
 
+SCRIPTS=${SCRIPTS:-}
 if [ -z $SCRIPTS ]; then
   SCRIPTS=.
 fi

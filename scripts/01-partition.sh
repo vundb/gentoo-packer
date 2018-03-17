@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -uex
 
 sgdisk \
   -n 1:0:+128M -t 1:8300 -c 1:"linux-boot" \

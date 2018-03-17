@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -uex
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 USE="-sendmail" emerge app-admin/sudo
 emerge -vq net-fs/nfs-utils
 useradd -m -s /bin/bash vagrant
