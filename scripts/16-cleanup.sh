@@ -1,6 +1,8 @@
 #!/bin/bash -uex
 
-chroot /mnt/gentoo /bin/bash -uex <<'EOF'
+chroot /mnt/gentoo /bin/bash <<'EOF'
+echo "sys-fs/zerofree **" >> /etc/portage/package.accept_keywords
+emerge -vq sys-fs/zerofree
 cd /usr/src/linux && make clean
 emerge -vq --depclean
 EOF
@@ -10,23 +12,15 @@ rm -rf /mnt/gentoo/tmp/*
 rm -rf /mnt/gentoo/var/log/*
 rm -rf /mnt/gentoo/var/tmp/*
 
-chroot /mnt/gentoo /bin/bash -uex <<'EOF'
+chroot /mnt/gentoo /bin/bash <<'EOF'
 mkdir /usr/portage/metadata/
 echo "masters = gentoo" >> /usr/portage/metadata/layout.conf
 EOF
 
-chroot /mnt/gentoo /bin/bash -uex <<'EOF'
-wget http://frippery.org/uml/zerofree-1.0.4.tgz
-tar xvzf zerofree-*.tgz
-cd zerofree*/
-make
-EOF
-
-mv /mnt/gentoo/zerofree* ./
-cd zerofree*/
-
 mount -o remount,ro /mnt/gentoo
-./zerofree /dev/sda4
+chroot /mnt/gentoo /bin/bash <<'EOF'
+zerofree /dev/sda4
+EOF
 
 swapoff /dev/sda3
 dd if=/dev/zero of=/dev/sda3 || true
