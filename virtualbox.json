@@ -83,7 +83,7 @@
   ],
   "variables": {
     "password": "packer",
-    "stage3": "20170907",
+    "stage3": "20180315T214502Z",
     "username": "root",
     "headless": "false"
   }
