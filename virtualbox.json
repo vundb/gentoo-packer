@@ -67,7 +67,10 @@
         "STAGE3={{user `stage3`}}",
         "VM_TYPE=virtualbox",
         "SCRIPTS=/tmp",
-        "COUNTRY={{user `country`}}"
+        "COUNTRY={{user `country`}}",
+        "MAKEOPTS=-j3",
+        "TIMEZONE=UTC",
+        "KEYMAP=us"
       ],
       "scripts": [
         "provision.sh"
