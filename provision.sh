@@ -25,10 +25,11 @@ for script in \
   11-network     \
   12-vagrant     \
   13-locale      \
-	14-keymap      \
+  14-keymap      \
   15-tools       \
-	16-cleanup
+  16-cleanup
 do
+  echo "**** Running $script ******"
   "$SCRIPTS/scripts/$script.sh"
 done
 
