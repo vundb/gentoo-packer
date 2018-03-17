@@ -13,7 +13,7 @@ MIRROR=$(grep '^GENTOO_MIRRORS' '/etc/portage/make.conf')
 MIRROR=$(echo $MIRROR | sed -e 's/"//g')
 
 # incase we were unable to find a mirror
-[ -z "${MIRROR}" ] && MIRROR='GENTOO_MIRRORS=http://mirrors.evowise.com/gentoo/'
+[ -z "${MIRROR}" ] && MIRROR='GENTOO_MIRRORS=http://distfiles.gentoo.org'
 
 cd /mnt/gentoo
 echo 'Download stage3'
