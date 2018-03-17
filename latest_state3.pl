@@ -53,7 +53,7 @@ sub get_datestamp {
 
     for my $line ( lines( get_url($url) ) ) {
         next if $line =~ /\A#/;
-        next unless $line =~ /\A(\d+)\/${image_name}-\d+.iso\s/;
+        next unless $line =~ /\A(\d+T\d+Z)*\/${image_name}-.*iso\s/;
         return "$1";
     }
     die "Did not find /${image_name} in ${url}";
