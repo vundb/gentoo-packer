@@ -7,7 +7,7 @@ if [ "$ARCH" == "x86" ]; then
 fi
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
-emerge -vq sys-kernel/gentoo-sources
+emerge -vq1 sys-kernel/gentoo-sources
 cd /usr/src/linux
 mv /tmp/kernel.config .config
 make kvmconfig
