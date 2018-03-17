@@ -70,6 +70,7 @@
         "COUNTRY={{user `country`}}",
         "MAKEOPTS=-j3",
         "TIMEZONE=UTC",
+        "LANG=en_US",
         "KEYMAP=us"
       ],
       "scripts": [
