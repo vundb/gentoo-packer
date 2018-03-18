@@ -1,11 +1,24 @@
 #!/bin/bash -uex
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+OLD_ARCH=${ARCH}
+
+case "${ARCH}" in
+    x86|x86_64|amd64)
+        ARCH=x86
+    ;;
+esac
+
+export ARCH
+echo "ARCH=${ARCH}"
+
+chroot /mnt/gentoo /bin/bash -uex <<'EOF'
 echo "sys-fs/zerofree **" >> /etc/portage/package.accept_keywords
 emerge -vq sys-fs/zerofree
 cd /usr/src/linux && make clean
 emerge -vq --depclean
 EOF
+
+ARCH=${OLD_ARCH}
 
 rm -rf /mnt/gentoo/usr/portage/*
 rm -rf /mnt/gentoo/tmp/*
