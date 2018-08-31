@@ -38,7 +38,7 @@
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
       "headless": "{{user `headless`}}",
-      "iso_checksum": "f6d4985eba967356ba994833634697c6ab001880f9423d769254f0eefe61ea6d1c292f5c39dcede4581fc86dae6b343fe1e5e6d641105c48c28eaa7fcc2751b1",
+      "iso_checksum": "dc6e83483b98dadaeb753a3712236a1c39d357bfea662f6cc40a406a008b90a44c591df768b66a29ae5919caa3299efebef24efa113279022a7721993ff8689b",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
       "shutdown_command": "shutdown -hP now",
@@ -52,7 +52,7 @@
   "description": "Faithful Stage 3 Gentoo Installation (VirtualBox)",
   "post-processors": [
     {
-      "output": "codylane-gentoo-{{user `stage3`}}.box",
+      "output": "vundb-gentoo-{{user `stage3`}}.box",
       "type": "vagrant"
     }
   ],
@@ -67,12 +67,12 @@
         "STAGE3={{user `stage3`}}",
         "VM_TYPE=virtualbox",
         "SCRIPTS=/tmp",
-        "MIRRORSELECT_COUNTRY=USA",
+        "MIRRORSELECT_COUNTRY=Germany",
         "MIRRORSELECT_REGION=",
-        "MAKEOPTS=-j3",
+        "MAKEOPTS=-j8",
         "TIMEZONE=UTC",
         "LANG=en_US",
-        "KEYMAP=us",
+        "KEYMAP=de",
         "ARCH=amd64"
       ],
       "scripts": [
@@ -84,7 +84,7 @@
   "variables": {
     "headless": "false",
     "password": "packer",
-    "stage3": "20180315T214502Z",
+    "stage3": "20180828T214505Z",
     "username": "root"
   }
 }
