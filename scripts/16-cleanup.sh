@@ -12,6 +12,7 @@ export ARCH
 echo "ARCH=${ARCH}"
 
 chroot /mnt/gentoo /bin/bash -uex <<'EOF'
+mkdir -p /etc/portage/package.accept_keywords
 echo "sys-fs/zerofree **" >> /etc/portage/package.accept_keywords/sys-fs-zerofree
 emerge -vq sys-fs/zerofree
 cd /usr/src/linux && make clean
