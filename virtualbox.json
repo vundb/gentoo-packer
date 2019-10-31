@@ -38,7 +38,7 @@
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
       "headless": "{{user `headless`}}",
-      "iso_checksum": "0914713eb1637eadd202a1cc35ed015e2b5f5af55ec4a6e48ec15232c04df638607386d5754c7666458fc0f019693815a3a1de786041f725652c3e815d391e54",
+      "iso_checksum": "d9c42b4a6f2d0db4cd4b1e05ffa89bca3d0ca09f6b639489d2982fd432251b32ea7b93f1a9feb9ae8786af42c8450529399b552ae12957607d5a655cedc9e144",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
       "shutdown_command": "shutdown -hP now",
@@ -84,7 +84,7 @@
   "variables": {
     "headless": "false",
     "password": "packer",
-    "stage3": "20190505T214502Z",
+    "stage3": "20191023T214502Z",
     "username": "root"
   }
 }
